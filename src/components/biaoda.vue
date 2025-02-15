@@ -15,74 +15,66 @@ const initChart = () => {
     myChart = echarts.init(chartDom.value);
     const option = {
       tooltip: {
-        // 鼠标悬浮提示数据
-        trigger: "axis",
-        backgroundColor: "rgba(32, 33, 36,.7)",
-        borderColor: "rgba(32, 33, 36,0.20)",
-        borderWidth: 15,
-        textStyle: {
-          // 文字提示样式
-          color: "#fff",
-          fontSize: "12",
-        },
-        axisPointer: {
-          // 坐标轴虚线
-          type: "cross",
-          label: {
-            backgroundColor: "#6a7985",
-          },
-        },
-      },
-      grid: {
-        // 控制图表的位置
-        left: "5%",
-        right: "5%",
-        top: "18%",
-        bottom: "5%",
-        containLabel: true,
-      },
-      xAxis: {
-        axisLabel: {
-          // X轴线 标签修改
-          textStyle: {
-            color: "white", // 坐标值得具体的颜色
-            fontSize: "10",
-          },
-        },
-        data: ["A", "B", "C", "D", "E", "F"],
-      },
-      yAxis: {
-        axisLabel: {
-          // y轴线 标签修改
-          textStyle: {
-            color: "white", // 坐标值得具体的颜色
-          },
-        },
+        trigger: 'item'
       },
       series: [
         {
-          data: [2549, 12421, 2637, 3146, 15189, 9562],
-          type: "bar",
-          barWidth: "48%", // 调整柱状图宽度
+          name: 'Access From',
+          type: 'pie',
+          radius: ['40%', '70%'],
+          center: ['50%', '50%'],
+          avoidLabelOverlap: false,
           itemStyle: {
-            normal: {
-              /*--------设置柱形图圆角 [左上角，右上角，右下角，左下角]-------------*/
-              borderRadius: [12, 12, 0, 0],
-              /*--------设置柱形图渐变色 -------------*/
-              color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-                {
-                  offset: 0,
-                  color: "rgba(0,244,255,1)",
-                },
-                {
-                  offset: 1,
-                  color: "rgba(0,77,167,1)",
-                },
-              ]),
-            },
+            borderRadius: 10,
+            borderColor: '#fff',
+            borderWidth: 2 // 修正拼写错误
           },
-        },
+          label: {
+            show: false,
+            position: 'center'
+          },
+          emphasis: {
+            label: {
+              show: true,
+              fontSize: 40,
+              fontWeight: 'bold'
+            }
+          },
+          labelLine: {
+            show: false
+          },
+          data: [
+            { value: 1048, name: 'Search Engine', itemStyle: { color: 'green' } },
+            { value: 735, name: 'Direct', itemStyle: { color: 'blue' } },
+            { value: 580, name: 'Email', itemStyle: { color: 'yellow' } },
+            { value: 484, name: 'Union Ads', itemStyle: { color: 'red' } }
+          ]
+        }
       ],
+      graphic: [
+        {
+          type: 'text',
+          left: 'center',
+          top: 'center',
+          style: {
+            text: '{network|网络数}\n{number|3}',
+            textAlign: 'center',
+            fill: 'white',
+            fontSize: 16,
+            rich: {
+              network: {
+                fontSize: 16,
+                color: 'white'
+              },
+              number: {
+                fontSize: 24,
+                color: 'white',
+                fontWeight: 'bold'
+              }
+            }
+          }
+        }
+      ]
     };
     option && myChart.setOption(option);
   }
@@ -95,14 +87,43 @@ const updateChartData = async () => {
       throw new Error('Network response was not ok');
     }
     const data = await response.json();
-    const newData = data.values; // 假设返回的 JSON 格式为 { "values": [5000, 10000, 15000, 20000, 25000, 30000] }
+    const newData = data.values; // 假设返回的 JSON 格式为 { "values": [5000, 10000, 15000, 20000] }
     console.log(chartDom.value);
     myChart?.setOption({
       series: [
         {
-          data: newData,
+          data: [
+            { value: newData[0], name: 'Search Engine', itemStyle: { color: 'green' } },
+            { value: newData[1], name: 'Direct', itemStyle: { color: 'blue' } },
+            { value: newData[2], name: 'Email', itemStyle: { color: 'yellow' } },
+            { value: newData[3], name: 'Union Ads', itemStyle: { color: 'red' } }
+          ],
         },
       ],
+      graphic: [
+        {
+          type: 'text',
+          left: 'center',
+          top: 'center',
+          style: {
+            text: '{network|网络数}\n{number|3}',
+            textAlign: 'center',
+            fill: 'white',
+            fontSize: 16,
+            rich: {
+              network: {
+                fontSize: 16,
+                color: 'white'
+              },
+              number: {
+                fontSize: 24,
+                color: 'white',
+                fontWeight: 'bold'
+              }
+            }
+          }
+        }
+      ]
     });
   } catch (error) {
     console.error('Fetch error:', error);
@@ -140,14 +161,10 @@ body,
 }
 
 .box {
-  width: 200px;
+  width: 300px;
   height: 200px;
-  /* 设置高度为50% */
-  background-color: #031a67;
+  background-color: #161922;
   margin-bottom: 30px;
   margin-right: 30px;
-  margin-left: 30px;
-  margin-top: 30px;
-
 }
 </style>
