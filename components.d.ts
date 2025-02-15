@@ -8,10 +8,12 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     Biaoda: typeof import('./src/components/biaoda.vue')['default']
+    Biaownoc: typeof import('./src/components/biaownoc.vue')['default']
     ElAutocomplete: typeof import('element-plus/es')['ElAutocomplete']
     ElCol: typeof import('element-plus/es')['ElCol']
     ElRow: typeof import('element-plus/es')['ElRow']
     ElTransfer: typeof import('element-plus/es')['ElTransfer']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
+    Piewnoc: typeof import('./src/components/piewnoc.vue')['default']
   }
 }

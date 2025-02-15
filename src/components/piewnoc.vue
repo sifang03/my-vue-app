@@ -162,7 +162,7 @@ body,
 
 .box {
   width: 300px;
-  height: 200px;
+  height: 300px;
   background-color: #161922;
   margin-bottom: 30px;
   margin-right: 30px;

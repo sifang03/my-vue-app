@@ -1,6 +1,6 @@
 <script setup lang="ts">
 // import HelloWorld from './components/HelloWorld.vue'
-import Biaoda from './components/biaoda.vue';
+import Biaoda from './components/piewnoc.vue';
 </script>
 
 <template>
@@ -15,6 +15,9 @@ import Biaoda from './components/biaoda.vue';
   <!-- <HelloWorld msg="Vite + Vue" /> -->
 
 
+  <div >
+    <Biaoda />
+  </div>
   <div>
     <Biaoda />
   </div>
@@ -36,6 +39,7 @@ import Biaoda from './components/biaoda.vue';
 .logo.vue:hover {
   filter: drop-shadow(0 0 2em #42b883aa);
 }
+
 .div {
   display: flex;
   justify-content: center;
