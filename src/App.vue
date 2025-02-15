@@ -1,6 +1,7 @@
 <script setup lang="ts">
 // import HelloWorld from './components/HelloWorld.vue'
-import Biaoda from './components/piewnoc.vue';
+import piewnoc from './components/piewnoc.vue';
+import biaownoc from './components/biaownoc.vue';
 </script>
 
 <template>
@@ -15,11 +16,11 @@ import Biaoda from './components/piewnoc.vue';
   <!-- <HelloWorld msg="Vite + Vue" /> -->
 
 
-  <div >
-    <Biaoda />
+  <div>
+    <piewnoc />
   </div>
   <div>
-    <Biaoda />
+    <biaownoc />
   </div>
 
 </template>

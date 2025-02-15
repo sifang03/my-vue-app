@@ -1,6 +1,6 @@
 <template>
   <div class="box" ref="chartDom"></div>
-  <button @click="updateChartData">点击</button>
+  <!-- <button @click="updateChartData">点击</button> -->
 </template>
 
 <script setup lang="ts">
