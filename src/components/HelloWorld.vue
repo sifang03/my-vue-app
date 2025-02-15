@@ -18,6 +18,6 @@ export default defineComponent({
 
 <style scoped>
 .hello {
-    color: blue;
+    color: rgb(255, 255, 255);
 }
 </style>

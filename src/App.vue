@@ -5,46 +5,55 @@ import biaownoc from './components/biaownoc.vue';
 </script>
 
 <template>
-  <div>
-    <!-- <a href="https://vite.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a> -->
+  <div class="sssss">
+    <div>
+      <piewnoc />
+    </div>
+    <div id="biaownoc">
+      <biaownoc />
+    </div>
   </div>
-  <!-- <HelloWorld msg="Vite + Vue" /> -->
-
-
-  <div>
-    <piewnoc />
-  </div>
-  <div>
-    <biaownoc />
-  </div>
-
 </template>
 
 <style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
-
-.div {
+.sssss {
   display: flex;
   justify-content: center;
+  /* 水平居中 */
   align-items: center;
-  height: 100vh;
+  /* 垂直居中 */
+  width: 600px;
+  height: 300px;
+  margin: 0;
+  padding: 0;
+  color: blue;
+  box-sizing: border-box;
+  /* 确保 padding 和 border 不会影响宽度 */
+}
+
+.sssss div {
+  width: 300px;
+  height: 300px;
+  margin: 0;
+  padding: 0;
+  color: blue;
+  box-sizing: border-box;
+  /* 确保 padding 和 border 不会影响宽度 */
+}
+
+#biaownoc {
+  width: 300px;
+  height: 300px;
+  margin: 0;
+  padding: 0;
+  color: blue;
+  box-sizing: border-box;
+  /* 确保 padding 和 border 不会影响宽度 */
+  display: flex;
+  /* 使用 flexbox 布局 */
+  justify-content: center;
+  /* 水平居中 */
+  align-items: center;
+  /* 垂直居中 */
 }
 </style>

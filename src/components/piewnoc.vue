@@ -33,21 +33,21 @@ const initChart = () => {
             show: false,
             position: 'center'
           },
-          emphasis: {
-            label: {
-              show: true,
-              fontSize: 40,
-              fontWeight: 'bold'
-            }
-          },
-          labelLine: {
-            show: false
-          },
+          // emphasis: {
+          //   label: {
+          //     show: true,
+          //     fontSize: 40,
+          //     fontWeight: 'bold'
+          //   }
+          // },
+          // labelLine: {
+          //   show: false
+          // },
           data: [
-            { value: 1048, name: 'Search Engine', itemStyle: { color: 'green' } },
-            { value: 735, name: 'Direct', itemStyle: { color: 'blue' } },
-            { value: 580, name: 'Email', itemStyle: { color: 'yellow' } },
-            { value: 484, name: 'Union Ads', itemStyle: { color: 'red' } }
+            { value: 1048, itemStyle: { color: 'green' } },
+            { value: 735, itemStyle: { color: 'blue' } },
+            { value: 580, itemStyle: { color: 'yellow' } },
+            { value: 484, itemStyle: { color: 'red' } }
           ]
         }
       ],
@@ -93,10 +93,10 @@ const updateChartData = async () => {
       series: [
         {
           data: [
-            { value: newData[0], name: 'Search Engine', itemStyle: { color: 'green' } },
-            { value: newData[1], name: 'Direct', itemStyle: { color: 'blue' } },
-            { value: newData[2], name: 'Email', itemStyle: { color: 'yellow' } },
-            { value: newData[3], name: 'Union Ads', itemStyle: { color: 'red' } }
+            { value: newData[0], itemStyle: { color: 'green' } },
+            { value: newData[1], itemStyle: { color: 'blue' } },
+            { value: newData[2], itemStyle: { color: 'yellow' } },
+            { value: newData[3], itemStyle: { color: 'red' } }
           ],
         },
       ],
