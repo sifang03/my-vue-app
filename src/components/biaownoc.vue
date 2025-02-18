@@ -1,6 +1,6 @@
 <template>
-    <el-table :data="tableData" style="width: 100%; padding-top: 30px;">
-        <el-table-column label="等级" width="100%">
+    <el-table :data="tableData" style="width: 100% ; padding-top: 30px; background-color: black;">
+        <el-table-column label="等级" width="100%" style="background-color: black;">
             <template #default="scope">
                 <span :style="{ color: getColor(scope.row.date) }">
                     <span class="dot" :style="{ backgroundColor: getColor(scope.row.date) }"></span>
@@ -11,12 +11,15 @@
         <el-table-column prop="name" label="网络数量" width="100%" />
         <el-table-column prop="address" label="占比" width="100%" />
     </el-table>
+    <!-- <button @click="show">2222</button> -->
 </template>
 
-<script lang="ts" setup>
-import { ref } from 'vue'
-
-const tableData = ref([
+<script setup lang="ts">
+import { ref, reactive } from 'vue';
+const show = () => {
+    console.log(tableData);
+}
+const tableData = reactive([
     {
         date: 'A',
         name: '3',
@@ -53,6 +56,8 @@ const getColor = (date: string) => {
             return 'black';
     }
 }
+
+defineExpose({ tableData, });
 </script>
 
 <style>
@@ -61,6 +66,10 @@ const getColor = (date: string) => {
     background-color: #161922 !important;
     border: none !important;
     /* 移除表格边框 */
+}
+
+.el-table__inner-wrapper {
+    background-color: #161922 !important;
 }
 
 .el-table__row {
@@ -78,6 +87,7 @@ const getColor = (date: string) => {
 }
 
 .el-table__cell {
+    background-color: #161922 !important;
     border: none !important;
     /* 移除单元格边框 */
 }
@@ -94,7 +104,6 @@ const getColor = (date: string) => {
     display: inline-block;
     width: 8px;
     height: 8px;
-    border-radius: 50%;
-    margin-right: 4px;
+
 }
 </style>

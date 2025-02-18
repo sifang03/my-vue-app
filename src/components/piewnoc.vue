@@ -164,7 +164,19 @@ body,
   width: 300px;
   height: 300px;
   background-color: #161922;
-  margin-bottom: 30px;
-  margin-right: 30px;
+}
+
+.even-row {
+  background-color: #161922;
+  /* 设置偶数行背景色 */
+}
+
+.odd-row {
+  background-color: #161922;
+  /* 设置奇数行背景色 */
+}
+
+.el-table {
+  background-color: #161922;
 }
 </style>

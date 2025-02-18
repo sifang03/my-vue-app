@@ -1,59 +1,68 @@
-<script setup lang="ts">
-// import HelloWorld from './components/HelloWorld.vue'
-import piewnoc from './components/piewnoc.vue';
-import biaownoc from './components/biaownoc.vue';
-</script>
-
 <template>
-  <div class="sssss">
-    <div>
+  <!-- <button @click="cccc">点击</button> -->
+  <div class="nihao">
+    <div class="fuangkuai">
       <piewnoc />
     </div>
-    <div id="biaownoc">
-      <biaownoc />
+    <div class="fuangkuai">
+      <biaownoc ref="c" />
     </div>
   </div>
+  <div>
+    <zhuzhuantu />
+  </div>
+  <!-- <fu /> -->
 </template>
+<script setup lang="js">
+import piewnoc from './components/piewnoc.vue';
+import biaownoc from './components/biaownoc.vue';
+import zhuzhuantu from './components/zhuzhuantu.vue';
+import fu from './components/fu.vue';
+import { ref, watch, onMounted } from 'vue';
+
+const c = ref(null);
+
+const cccc = () => {
+  if (c.value && c.value.tableData) {
+    console.log(c.value.tableData); // 访问 tableData
+    c.value.tableData[0]["date"] = 'ssss';
+  }
+};
+
+// watch(() => c.value, (newValue) => {
+//   if (newValue) { 
+//     console.log(newValue);
+//   }
+// });
+
+onMounted(() => {
+  console.log(c.value.tableData); // 检查组件是否正确挂载
+});
+</script>
 
 <style scoped>
-.sssss {
+.nihao {
   display: flex;
-  justify-content: center;
-  /* 水平居中 */
-  align-items: center;
-  /* 垂直居中 */
-  width: 600px;
-  height: 300px;
-  margin: 0;
-  padding: 0;
-  color: blue;
-  box-sizing: border-box;
-  /* 确保 padding 和 border 不会影响宽度 */
+  /* flex-direction: row; */
+  width: 600px !important;
+  height: 300px !important;
+  margin: 0px;
+  padding: 0px;
+  background-color: #161922;
 }
 
-.sssss div {
+.fuangkuai {
+  display: flex;
+  flex-direction: column;
   width: 300px;
   height: 300px;
-  margin: 0;
-  padding: 0;
-  color: blue;
-  box-sizing: border-box;
-  /* 确保 padding 和 border 不会影响宽度 */
+  margin: 0px;
+  padding: 0px;
+  background-color: #161922;
 }
 
-#biaownoc {
-  width: 300px;
-  height: 300px;
-  margin: 0;
-  padding: 0;
-  color: blue;
-  box-sizing: border-box;
-  /* 确保 padding 和 border 不会影响宽度 */
+.app {
   display: flex;
-  /* 使用 flexbox 布局 */
-  justify-content: center;
-  /* 水平居中 */
-  align-items: center;
-  /* 垂直居中 */
+  flex-direction: row;
 }
 </style>

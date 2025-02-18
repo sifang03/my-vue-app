@@ -15,7 +15,10 @@ declare module 'vue' {
     ElTable: typeof import('element-plus/es')['ElTable']
     ElTableColumn: typeof import('element-plus/es')['ElTableColumn']
     ElTransfer: typeof import('element-plus/es')['ElTransfer']
+    Fu: typeof import('./src/components/fu.vue')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
     Piewnoc: typeof import('./src/components/piewnoc.vue')['default']
+    Zhuzhuantu: typeof import('./src/components/zhuzhuantu.vue')['default']
+    Zi: typeof import('./src/components/zi.vue')['default']
   }
 }
