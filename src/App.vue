@@ -12,7 +12,7 @@
     <zhuzhuantu />
   </div> -->
   <div>
-    <!-- <MapComponent /> -->
+    <MapComponent />
     <newdrop />
     <otherpenent />
   </div>
