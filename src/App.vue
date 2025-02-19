@@ -1,6 +1,6 @@
 <template>
   <!-- <button @click="cccc">点击</button> -->
-  <div class="nihao">
+  <!-- <div class="nihao">
     <div class="fuangkuai">
       <piewnoc />
     </div>
@@ -10,24 +10,32 @@
   </div>
   <div>
     <zhuzhuantu />
+  </div> -->
+  <div>
+    <!-- <MapComponent /> -->
+    <newdrop />
+    <otherpenent />
   </div>
   <!-- <fu /> -->
 </template>
 <script setup lang="js">
+import MapComponent from './components/ditu.vue';
 import piewnoc from './components/piewnoc.vue';
 import biaownoc from './components/biaownoc.vue';
+import newdrop from './components/newdrop.vue';
 import zhuzhuantu from './components/zhuzhuantu.vue';
 import fu from './components/fu.vue';
+import otherpenent from './components/otherpenent.vue';
 import { ref, watch, onMounted } from 'vue';
 
-const c = ref(null);
+// const c = ref(null);
 
-const cccc = () => {
-  if (c.value && c.value.tableData) {
-    console.log(c.value.tableData); // 访问 tableData
-    c.value.tableData[0]["date"] = 'ssss';
-  }
-};
+// const cccc = () => {
+//   if (c.value && c.value.tableData) {
+//     console.log(c.value.tableData); // 访问 tableData
+//     c.value.tableData[0]["date"] = 'ssss';
+//   }
+// };
 
 // watch(() => c.value, (newValue) => {
 //   if (newValue) { 
@@ -35,9 +43,9 @@ const cccc = () => {
 //   }
 // });
 
-onMounted(() => {
-  console.log(c.value.tableData); // 检查组件是否正确挂载
-});
+// onMounted(() => {
+//   console.log(c.value.tableData); // 检查组件是否正确挂载
+// });
 </script>
 
 <style scoped>

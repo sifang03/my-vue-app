@@ -9,6 +9,7 @@ declare module 'vue' {
   export interface GlobalComponents {
     Biaoda: typeof import('./src/components/biaoda.vue')['default']
     Biaownoc: typeof import('./src/components/biaownoc.vue')['default']
+    Ditu: typeof import('./src/components/ditu.vue')['default']
     ElAutocomplete: typeof import('element-plus/es')['ElAutocomplete']
     ElCol: typeof import('element-plus/es')['ElCol']
     ElRow: typeof import('element-plus/es')['ElRow']
@@ -17,7 +18,10 @@ declare module 'vue' {
     ElTransfer: typeof import('element-plus/es')['ElTransfer']
     Fu: typeof import('./src/components/fu.vue')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
+    Newdrop: typeof import('./src/components/newdrop.vue')['default']
+    Otherpenent: typeof import('./src/components/otherpenent.vue')['default']
     Piewnoc: typeof import('./src/components/piewnoc.vue')['default']
+    Xialakuang: typeof import('./src/components/xialakuang.vue')['default']
     Zhuzhuantu: typeof import('./src/components/zhuzhuantu.vue')['default']
     Zi: typeof import('./src/components/zi.vue')['default']
   }

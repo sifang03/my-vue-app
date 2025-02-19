@@ -11,6 +11,7 @@
   "dependencies": {
     "echarts": "^5.6.0",
     "element-plus": "^2.9.3",
+    "pinia": "^3.0.1",
     "vue": "^3.5.13",
     "vue-echart": "^1.0.5"
   },
